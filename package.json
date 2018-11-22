@@ -1,0 +1,22 @@
+{
+    "name": "epfl-machine-learning-project-02",
+    "private": true,
+    "version": "0.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "setup": "sh bash_npm/setup.sh",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/7PH/EPFL-Machine-Learning-Project-02.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/7PH/EPFL-Machine-Learning-Project-02/issues"
+    },
+    "homepage": "https://github.com/7PH/EPFL-Machine-Learning-Project-02#readme"
+}
