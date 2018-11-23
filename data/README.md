@@ -1,0 +1,1 @@
+Run `npm run setup` in the root directory to download the datasets
