@@ -6,7 +6,7 @@
     "main": "index.js",
     "scripts": {
         "setup": "sh bash_npm/setup.sh",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "sh bash_npm/test.sh"
     },
     "repository": {
         "type": "git",
