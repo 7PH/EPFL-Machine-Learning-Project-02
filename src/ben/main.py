@@ -1,22 +1,27 @@
-import torch
-import pandas as pd
-import torch
-from torchtext import data
-import numpy as np
-from keras.preprocessing.text import Tokenizer
-from keras.preprocessing import sequence
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers.convolutional import Convolution1D
-from keras.layers import Dense, Dropout, Embedding, LSTM, SpatialDropout1D
-from keras.layers.embeddings import Embedding
-from keras.layers import LSTM
-from keras.layers import SpatialDropout1D
-from keras.layers.recurrent import GRU
-
+from src.ben.model import get_model, tokenize
 from src.loader.loader import load_data
 
-print(torch.cuda.is_available())
-data = load_data()
+data = load_data(sample=True)
+tokenized = tokenize(data['train'], data['test'])
+model = get_model(tokenized['nb_features'], tokenized['train_sequences_pad'])
+model.fit(
+    tokenized['train_sequences_pad'],
+    data['train']['label'].values,
+    validation_split=.1,
+    epochs=1,
+    batch_size=128,
+    verbose=True
+)
+pred_train = model.predict_proba(tokenized['train_sequences_pad'], batch_size=128)
+
+print("\nData summary")
 print(data['train'].head(4))
 print(data['test'].head(4))
+
+print("\nTokens")
+print(tokenized['train_sequences_pad'])
+
+print("\nModel summary")
+print(model.summary())
+print("\nPrediction")
+print(pred_train)
