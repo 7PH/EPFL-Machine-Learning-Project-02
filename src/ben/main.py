@@ -17,5 +17,6 @@ from keras.layers.recurrent import GRU
 from src.loader.loader import load_data
 
 print(torch.cuda.is_available())
-d = load_data()
-print(d)
+data = load_data()
+print(data['train'].head(4))
+print(data['test'].head(4))
