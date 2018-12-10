@@ -24,8 +24,8 @@ def tokenize(df_train, df_test):
 
     return {
         'nb_features': nb_features,
-        'train_sequences_pad': train_sequences_pad,
-        'test_sequences_pad': test_sequences_pad,
+        'train': train_sequences_pad,
+        'test': test_sequences_pad,
     }
 
 
