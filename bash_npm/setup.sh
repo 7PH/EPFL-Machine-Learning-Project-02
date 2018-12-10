@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 
-echo "Downloading datasets..";
 mkdir data;
 cd data;
-wget http://uploads.benjamin-raymond.pro/2018/11/23/01-24-01-000-sample_submission.csv -O sample_submission.csv;
-wget http://uploads.benjamin-raymond.pro/2018/11/23/01-24-01-001-test_data.txt -O test_data.txt;
+
+echo "Cleaning datasets..";
+rm *.csv *.zip *.txt;
+
+echo "Downloading datasets..";
 wget http://uploads.benjamin-raymond.pro/2018/11/23/01-24-01-002-twitter-datasets.zip -O twitter-datasets.zip;
+unzip twitter-datasets.zip;
+mv twitter-datasets/* ./;
+rm -r twitter-datasets;
+rm twitter-datasets.zip;
 cd ../;
