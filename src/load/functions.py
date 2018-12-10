@@ -28,8 +28,9 @@ def load_data(sample=False, shuffle=True):
     df_neg = pd.DataFrame(data={'tweet': load_from_file(DATA_FOLDER + neg_path, clean_fn=clean_tweet)})
     df_neg['label'] = 1
     df_test = pd.DataFrame(data={'tweet': load_from_file(DATA_FOLDER + test_path, clean_fn=clean_test)})
+    df_test['id'] = df_test['tweet'].map(lambda x: x.split(',')[0])
+    df_test['tweet'] = df_test['tweet'].map(lambda x: ','.join(x.split(',')[1:]))
     df_test['label'] = -1
-    df_test = df_test.reset_index(drop=True)
 
     df_train = pd.concat([df_neg, df_pos])
     if shuffle:
