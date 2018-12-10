@@ -1,5 +1,5 @@
 from keras.models import Sequential
-from keras.layers import Dense, Dropout, Embedding, LSTM, SpatialDropout1D
+from keras.layers import Dense
 from keras.layers.embeddings import Embedding
 from keras.layers import LSTM
 from keras_preprocessing import sequence
@@ -7,7 +7,7 @@ from keras_preprocessing.text import Tokenizer
 
 
 def tokenize(df_train, df_test):
-    # At this stage, we tain keras tokenizer
+    # At this stage, we train keras tokenizer
     tokenizer = Tokenizer(split=' ')
     tokenizer.fit_on_texts(df_train['tweet'].values)
     dict_token = tokenizer.word_index  # To see the dicstionary of words kept
