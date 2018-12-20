@@ -1,17 +1,27 @@
-# EPFL 2nd Machine Learning Project
 
-## Download the datasets
+# How to use (UNIX)
+
+First, you need to clone the repository.
+
+```bash
+git clone https://github.com/7PH/https://github.com/7PH/EPFL-Machine-Learning-Project-02.git;
+cd EPFL-Machine-Learning-Project-02;
+```
+
+Then, you can download the CSV files using
 
 ```bash
 npm run setup
+# or
+sh scripts/setup.sh
 ```
 
-## Execute the unit tests
+**Do not forget to activate the python virtual environment you want to use at this point**
 
+To start the `run.sh` file, use
 ```bash
-npm test
+npm start
+# or
+python3 run.py
 ```
 
-## Where to code
-
-The code should be in the src folder

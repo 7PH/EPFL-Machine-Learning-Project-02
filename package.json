@@ -6,8 +6,7 @@
     "main": "index.js",
     "scripts": {
         "start": "python3 run.py",
-        "setup": "sh bash_npm/setup.sh",
-        "test": "sh bash_npm/test.sh"
+        "setup": "sh scripts/setup.sh"
     },
     "repository": {
         "type": "git",
