@@ -4,7 +4,7 @@
 First, you need to clone the repository.
 
 ```bash
-git clone https://github.com/7PH/https://github.com/7PH/EPFL-Machine-Learning-Project-02.git;
+git clone https://github.com/7PH/EPFL-Machine-Learning-Project-02.git;
 cd EPFL-Machine-Learning-Project-02;
 ```
 
